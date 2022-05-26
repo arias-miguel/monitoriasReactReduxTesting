@@ -7,7 +7,9 @@ export const typesMonitores ={
     register:'register',
     list: 'list',
     delete:'delete',
-    edit: 'edit'
+    edit: 'edit',
+    search : 'search',
+    
 }
 
 export const typesMonitorias ={

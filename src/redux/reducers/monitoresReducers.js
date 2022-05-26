@@ -23,6 +23,10 @@ export const monitoresReducers = (state = initialState, action)=>{
             return{
                 ...state
             }
+        case typesMonitores.search:
+            return {
+                monitores: action.payload
+            }
             default:
                 return state;
     }

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Button, Container, FormControl, InputGroup, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link, Route, Routes } from 'react-router-dom';
 import { obtenerDatos } from '../../helpers/LocalStorage';
 import { logoutAsync } from '../../redux/actions/actionLogin';
 import { listMonitor } from '../../redux/actions/actionMonitores';
 import { ContDivStyles } from '../login/formLogin/FormStyles';
+import Buscar from './buscar/Buscar';
 import CrearMonitores from './monitores/CrearMonitores';
 import Monitores from './monitores/Monitores';
 import CrearMonitorias from './monitorias/CrearMonitorias';
@@ -42,16 +43,7 @@ const NavHome = () => {
                 <Link className='pt-2 me-3' to="/crearmonitores">Crear Monitor</Link>
                 <Link className='pt-2 me-3' to="/monitorias">Monitorias</Link>
                 <Link className='pt-2 me-3' to="/crearmonitorias">Crear Monitoria</Link>
-                <div style={{margin:'5px 10px 3px 0px',width:'200px', color:'black'}}>
-                    <InputGroup>
-                        <FormControl style={{height:'38px'}}
-                        placeholder="Search"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                        />
-                        <InputGroup.Text  style={{height:'38px'}} id="basic-addon1" className="bg-warning text-dark" ><img src='https://res.cloudinary.com/dbdrkxooj/image/upload/v1652853701/bookmarkmovies/Property_1_search_o8m1ok.png' alt='logosearh'/></InputGroup.Text>
-                    </InputGroup>
-                </div>
+                <Link className='pt-2 me-3' to="/buscar">Buscar Monitoria</Link>
                     </Nav>
                     <Button className="text-warning" type='button' variant="primary"
                     onClick={()=>dispatch(logoutAsync())}>
@@ -68,6 +60,7 @@ const NavHome = () => {
           <Route path="/crearmonitores" element={ <CrearMonitores/>}/>
           <Route path="/monitorias" element={ <Monitorias/>}/>
           <Route path="/crearmonitorias" element={ <CrearMonitorias/>}/>
+          <Route path="/buscar" element={ <Buscar/>}/>
           
              </Routes>
         </ContDivStyles>

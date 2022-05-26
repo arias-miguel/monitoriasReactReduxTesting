@@ -111,3 +111,28 @@ export const editMonitorSync = (documento) => {
 
     }
 }
+
+//-----------------------Buscaar------------------------//
+export const searchMonitoresAsync = (nombreBuscar)=>{
+    return async (dispatch)=>{
+        const collectionListar = collection(db, "monitores")
+
+        const q = query(collectionListar, where('nombre', '>=', nombreBuscar), where('nombre', '<=', nombreBuscar + '~'))
+        const datosQ = await getDocs(q)
+
+        const monitor =[]
+        datosQ.forEach((docu =>{
+            monitor.push(docu.data())
+        }))
+        dispatch(searchMonitorSync(monitor))
+
+    }
+
+}
+
+export const searchMonitorSync = (documento)=>{
+    return{
+        type: typesMonitores.search,
+        payload: documento
+    }
+}

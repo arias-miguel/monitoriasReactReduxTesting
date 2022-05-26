@@ -10,6 +10,10 @@ const ModalEdit = ({datos, setModal}) => {
   const dispatch = useDispatch()
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
+
+//   const reload = () => {
+//     window.location.reload(true);
+//     }
  
 const [formValue, handleInputChange]= useForm({
   codigo: datos.codigo,
@@ -33,6 +37,8 @@ const handleSubmit =(e)=>{
   console.log(formValue)
   dispatch(editMonitoriaAsync(codigo, formValue))
   handleClose()
+
+  
 }
   return (
       <div>
@@ -99,8 +105,8 @@ const handleSubmit =(e)=>{
                     onChange={handleInputChange}
                 />
             </Form.Group> 
-
-              <Button type="submit">
+            
+              <Button  type="submit" >
                Editar
               </Button>
            

@@ -10,7 +10,6 @@ import { ContDivStyles } from '../formLogin/FormStyles';
 const FormRegister = () => {
 
     const dispatch = useDispatch()
-    console.log(dispatch)
     const formik = useFormik({
         initialValues: {
             nombre: "",

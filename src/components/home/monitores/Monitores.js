@@ -30,8 +30,8 @@ const Monitores = () => {
   return (
     <>
     <h1>Lista de Monitores</h1>
-    
-    <Table striped bordered hover size="sm">
+    <div style={{width:'50&', padding:'8%'}}>
+    <Table responsive striped bordered hover size="sm" variant='light'>
   <thead>
     <tr>
       <th>Doc</th>
@@ -40,7 +40,7 @@ const Monitores = () => {
       <th>email</th>
       <th>Programa Academico</th>
       <th>Telefono</th>
-      <th>edi</th>
+      <th>Accion</th>
   
     </tr>
   </thead>
@@ -65,6 +65,7 @@ const Monitores = () => {
     }
   </tbody>
 </Table>
+</div>
 {
   modal === true ? <ModalEdit datos={datos} setModal={setModal} /> : ''
 }

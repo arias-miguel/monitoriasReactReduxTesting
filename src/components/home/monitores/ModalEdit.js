@@ -24,17 +24,19 @@ const [formValue, handleInputChange]= useForm({
 const {documento, nombre, apellido, email, prograAcademico,telefono}=formValue
 
 const handleSubmit =(e)=>{
-  e.preventDefault();
+  e.preventDefault()
   console.log(formValue)
   dispatch(editMonitorAsync(email, formValue))
   handleClose()
+
+    
 }
   return (
       <div>
           <>
               <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                      <Modal.Title>Editar Planta</Modal.Title>
+                      <Modal.Title>Editar Monitor</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                   <Form onSubmit={handleSubmit} margin={50}>

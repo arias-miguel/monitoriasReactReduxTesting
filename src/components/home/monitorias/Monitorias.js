@@ -25,9 +25,9 @@ const Monitorias = () => {
  
   return (
     <>
-    <h1>Lista de Monitores</h1>
-    
-    <Table striped bordered hover size="sm">
+    <h1>Lista de Monitorias</h1>
+    <div style={{width:'50&', padding:'10%'}}>
+    <Table responsive striped bordered hover size="sm" variant='light'>
   <thead>
     <tr>
       <th>Codigo</th>
@@ -58,6 +58,7 @@ const Monitorias = () => {
     }
   </tbody>
 </Table>
+</div>
 {
   modal === true ? <ModalEdit datos={datos} setModal={setModal} /> : ''
 }

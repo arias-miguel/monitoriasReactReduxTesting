@@ -22,7 +22,7 @@ export const monitoriasReducers = (state = initialState, action)=>{
         case typesMonitorias.edit:
             return{
                     ...state
-                }    
+                }
             default:
                 return state;
     }
