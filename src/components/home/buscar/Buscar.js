@@ -36,7 +36,7 @@ const Buscar = () => {
                             <InputGroup.Text style={{height:'38px'}} id="basic-addon1" className="bg-warning text-dark" ><img src='https://res.cloudinary.com/dbdrkxooj/image/upload/v1652853701/bookmarkmovies/Property_1_search_o8m1ok.png' alt='logosearh'/></InputGroup.Text></button>
                     </InputGroup>
                     </form>
-                    {/* <Monitores/> */}
+                    <Monitores/>
                 </div>
   )
 }
